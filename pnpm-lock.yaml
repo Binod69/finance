@@ -11,6 +11,12 @@ importers:
       '@clerk/nextjs':
         specifier: ^6.12.12
         version: 6.12.12(next@15.2.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@hono/clerk-auth':
+        specifier: ^2.0.0
+        version: 2.0.0(@clerk/backend@1.25.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(hono@4.7.5)
+      '@hono/zod-validator':
+        specifier: ^0.4.3
+        version: 0.4.3(hono@4.7.5)(zod@3.24.2)
       '@radix-ui/react-slot':
         specifier: ^1.1.2
         version: 1.1.2(@types/react@19.0.12)(react@19.1.0)
@@ -20,6 +26,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      hono:
+        specifier: ^4.7.5
+        version: 4.7.5
       lucide-react:
         specifier: ^0.486.0
         version: 0.486.0(react@19.1.0)
@@ -38,6 +47,9 @@ importers:
       tw-animate-css:
         specifier: ^1.2.5
         version: 1.2.5
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
@@ -154,6 +166,19 @@ packages:
   '@eslint/plugin-kit@0.2.7':
     resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@hono/clerk-auth@2.0.0':
+    resolution: {integrity: sha512-ad+U8jDlBPgXBTv8BRnPrSFC/uX8U0ojiCR77I3WWHm5I9L3/bHsZpQ2lgvLTV3YbJyVmAdKJArEAQiPjodGdA==}
+    engines: {node: '>=16.x.x'}
+    peerDependencies:
+      '@clerk/backend': ^1.0.0
+      hono: '>=3.*'
+
+  '@hono/zod-validator@0.4.3':
+    resolution: {integrity: sha512-xIgMYXDyJ4Hj6ekm9T9Y27s080Nl9NXHcJkOvkXPhubOLj8hZkOL8pDnnXfvCf5xEE8Q4oMFenQUZZREUY2gqQ==}
+    peerDependencies:
+      hono: '>=3.9.0'
+      zod: ^3.19.1
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1110,6 +1135,10 @@ packages:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
 
+  hono@4.7.5:
+    resolution: {integrity: sha512-fDOK5W2C1vZACsgLONigdZTRZxuBqFtcKh7bUQ5cVSbwI2RWjloJDcgFOVzbQrlI6pCmhlTsVYZ7zpLj4m4qMQ==}
+    engines: {node: '>=16.9.0'}
+
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
@@ -1828,6 +1857,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@3.24.2:
+    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
+
 snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
@@ -1938,6 +1970,16 @@ snapshots:
     dependencies:
       '@eslint/core': 0.12.0
       levn: 0.4.1
+
+  '@hono/clerk-auth@2.0.0(@clerk/backend@1.25.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(hono@4.7.5)':
+    dependencies:
+      '@clerk/backend': 1.25.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      hono: 4.7.5
+
+  '@hono/zod-validator@0.4.3(hono@4.7.5)(zod@3.24.2)':
+    dependencies:
+      hono: 4.7.5
+      zod: 3.24.2
 
   '@humanfs/core@0.19.1': {}
 
@@ -2996,6 +3038,8 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  hono@4.7.5: {}
+
   ignore@5.3.2: {}
 
   import-fresh@3.3.1:
@@ -3815,3 +3859,5 @@ snapshots:
   word-wrap@1.2.5: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@3.24.2: {}
